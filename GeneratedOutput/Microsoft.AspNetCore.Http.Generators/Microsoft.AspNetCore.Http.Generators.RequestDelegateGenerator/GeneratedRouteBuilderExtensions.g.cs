@@ -40,11 +40,92 @@ namespace Microsoft.AspNetCore.Builder
         internal static global::Microsoft.AspNetCore.Builder.RouteHandlerBuilder MapGet(
             this global::Microsoft.AspNetCore.Routing.IEndpointRouteBuilder endpoints,
             [global::System.Diagnostics.CodeAnalysis.StringSyntax("Route")] string pattern,
-            global::System.Func<string> handler,
+            global::System.Func<global::System.String> handler,
             [global::System.Runtime.CompilerServices.CallerFilePath] string filePath = "",
             [global::System.Runtime.CompilerServices.CallerLineNumber]int lineNumber = 0)
         {
-            return global::Microsoft.AspNetCore.Http.Generated.GeneratedRouteBuilderExtensionsCore.MapCore(endpoints, pattern, handler, GetVerb, filePath, lineNumber);
+            return global::Microsoft.AspNetCore.Http.Generated.GeneratedRouteBuilderExtensionsCore.MapCore(
+                    endpoints,
+                    pattern,
+                    handler,
+                    GetVerb,
+                    filePath,
+                    lineNumber);
+        }
+        internal static global::Microsoft.AspNetCore.Builder.RouteHandlerBuilder MapGet(
+            this global::Microsoft.AspNetCore.Routing.IEndpointRouteBuilder endpoints,
+            [global::System.Diagnostics.CodeAnalysis.StringSyntax("Route")] string pattern,
+            global::System.Func<global::Todo> handler,
+            [global::System.Runtime.CompilerServices.CallerFilePath] string filePath = "",
+            [global::System.Runtime.CompilerServices.CallerLineNumber]int lineNumber = 0)
+        {
+            return global::Microsoft.AspNetCore.Http.Generated.GeneratedRouteBuilderExtensionsCore.MapCore(
+                    endpoints,
+                    pattern,
+                    handler,
+                    GetVerb,
+                    filePath,
+                    lineNumber);
+        }
+        internal static global::Microsoft.AspNetCore.Builder.RouteHandlerBuilder MapGet(
+            this global::Microsoft.AspNetCore.Routing.IEndpointRouteBuilder endpoints,
+            [global::System.Diagnostics.CodeAnalysis.StringSyntax("Route")] string pattern,
+            global::System.Func<global::Microsoft.AspNetCore.Http.HttpResults.Created<global::Todo>> handler,
+            [global::System.Runtime.CompilerServices.CallerFilePath] string filePath = "",
+            [global::System.Runtime.CompilerServices.CallerLineNumber]int lineNumber = 0)
+        {
+            return global::Microsoft.AspNetCore.Http.Generated.GeneratedRouteBuilderExtensionsCore.MapCore(
+                    endpoints,
+                    pattern,
+                    handler,
+                    GetVerb,
+                    filePath,
+                    lineNumber);
+        }
+        internal static global::Microsoft.AspNetCore.Builder.RouteHandlerBuilder MapGet(
+            this global::Microsoft.AspNetCore.Routing.IEndpointRouteBuilder endpoints,
+            [global::System.Diagnostics.CodeAnalysis.StringSyntax("Route")] string pattern,
+            global::System.Func<global::System.String, global::System.String> handler,
+            [global::System.Runtime.CompilerServices.CallerFilePath] string filePath = "",
+            [global::System.Runtime.CompilerServices.CallerLineNumber]int lineNumber = 0)
+        {
+            return global::Microsoft.AspNetCore.Http.Generated.GeneratedRouteBuilderExtensionsCore.MapCore(
+                    endpoints,
+                    pattern,
+                    handler,
+                    GetVerb,
+                    filePath,
+                    lineNumber);
+        }
+        internal static global::Microsoft.AspNetCore.Builder.RouteHandlerBuilder MapPost(
+            this global::Microsoft.AspNetCore.Routing.IEndpointRouteBuilder endpoints,
+            [global::System.Diagnostics.CodeAnalysis.StringSyntax("Route")] string pattern,
+            global::System.Func<global::Todo, global::System.String> handler,
+            [global::System.Runtime.CompilerServices.CallerFilePath] string filePath = "",
+            [global::System.Runtime.CompilerServices.CallerLineNumber]int lineNumber = 0)
+        {
+            return global::Microsoft.AspNetCore.Http.Generated.GeneratedRouteBuilderExtensionsCore.MapCore(
+                    endpoints,
+                    pattern,
+                    handler,
+                    PostVerb,
+                    filePath,
+                    lineNumber);
+        }
+        internal static global::Microsoft.AspNetCore.Builder.RouteHandlerBuilder MapGet(
+            this global::Microsoft.AspNetCore.Routing.IEndpointRouteBuilder endpoints,
+            [global::System.Diagnostics.CodeAnalysis.StringSyntax("Route")] string pattern,
+            global::System.Func<global::Todo, global::System.String> handler,
+            [global::System.Runtime.CompilerServices.CallerFilePath] string filePath = "",
+            [global::System.Runtime.CompilerServices.CallerLineNumber]int lineNumber = 0)
+        {
+            return global::Microsoft.AspNetCore.Http.Generated.GeneratedRouteBuilderExtensionsCore.MapCore(
+                    endpoints,
+                    pattern,
+                    handler,
+                    GetVerb,
+                    filePath,
+                    lineNumber);
         }
 
     }
@@ -78,50 +159,581 @@ namespace Microsoft.AspNetCore.Http.Generated
 
         private static readonly Dictionary<(string, int), (MetadataPopulator, RequestDelegateFactoryFunc)> map = new()
         {
-            [(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 4)] = (
-           (methodInfo, options) =>
-            {
-                if (options == null)
+            [(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 6)] = (
+               (methodInfo, options) =>
                 {
-                    return new RequestDelegateMetadataResult { EndpointMetadata = ReadOnlyCollection<object>.Empty };
-                }
-                options.EndpointBuilder.Metadata.Add(new SourceKey(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 4));
-                return new RequestDelegateMetadataResult { EndpointMetadata = options.EndpointBuilder.Metadata.AsReadOnly() };
-            },
-            (del, options, inferredMetadataResult) =>
-            {
-                var handler = (System.Func<string>)del;
-                EndpointFilterDelegate? filteredInvocation = null;
+                    Debug.Assert(options?.EndpointBuilder != null, "EndpointBuilder not found.");
+                    options.EndpointBuilder.Metadata.Add(new SourceKey(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 6));
+                    return new RequestDelegateMetadataResult { EndpointMetadata = options.EndpointBuilder.Metadata.AsReadOnly() };
+                },
+                (del, options, inferredMetadataResult) =>
+                {
+                    var handler = (Func<global::System.String>)del;
+                    EndpointFilterDelegate? filteredInvocation = null;
 
-                if (options.EndpointBuilder.FilterFactories.Count > 0)
-                {
-                    filteredInvocation = GeneratedRouteBuilderExtensionsCore.BuildFilterDelegate(ic =>
+                    if (options?.EndpointBuilder?.FilterFactories.Count > 0)
                     {
-                        if (ic.HttpContext.Response.StatusCode == 400)
+                        filteredInvocation = GeneratedRouteBuilderExtensionsCore.BuildFilterDelegate(ic =>
                         {
-                            return ValueTask.FromResult<object?>(Results.Empty);
-                        }
-                        return ValueTask.FromResult<object?>(handler());
-                    },
-                    options.EndpointBuilder,
-                    handler.Method);
-                }
+                            if (ic.HttpContext.Response.StatusCode == 400)
+                            {
+                                return ValueTask.FromResult<object?>(Results.Empty);
+                            }
+                            return ValueTask.FromResult<object?>(handler());
+                        },
+                        options.EndpointBuilder,
+                        handler.Method);
+                    }
 
-                Task RequestHandler(HttpContext httpContext)
-                {
+                    Task RequestHandler(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                            return Task.CompletedTask;
+                        }
+                        httpContext.Response.ContentType ??= "text/plain";
                         var result = handler();
                         return httpContext.Response.WriteAsync(result);
-                }
-                async Task RequestHandlerFiltered(HttpContext httpContext)
-                {
-                    var result = await filteredInvocation(new DefaultEndpointFilterInvocationContext(httpContext));
-                    await GeneratedRouteBuilderExtensionsCore.ExecuteObjectResult(result, httpContext);
-                }
+                    }
+                    async Task RequestHandlerFiltered(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
 
-                RequestDelegate targetDelegate = filteredInvocation is null ? RequestHandler : RequestHandlerFiltered;
-                var metadata = inferredMetadataResult?.EndpointMetadata ?? ReadOnlyCollection<object>.Empty;
-                return new RequestDelegateResult(targetDelegate, metadata);
-            }),
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                        }
+                        var result = await filteredInvocation(new DefaultEndpointFilterInvocationContext(httpContext));
+                        await GeneratedRouteBuilderExtensionsCore.ExecuteObjectResult(result, httpContext);
+                    }
+
+                    RequestDelegate targetDelegate = filteredInvocation is null ? RequestHandler : RequestHandlerFiltered;
+                    var metadata = inferredMetadataResult?.EndpointMetadata ?? ReadOnlyCollection<object>.Empty;
+                    return new RequestDelegateResult(targetDelegate, metadata);
+                }),
+            [(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 8)] = (
+               (methodInfo, options) =>
+                {
+                    Debug.Assert(options?.EndpointBuilder != null, "EndpointBuilder not found.");
+                    options.EndpointBuilder.Metadata.Add(new SourceKey(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 8));
+                    return new RequestDelegateMetadataResult { EndpointMetadata = options.EndpointBuilder.Metadata.AsReadOnly() };
+                },
+                (del, options, inferredMetadataResult) =>
+                {
+                    var handler = (Func<global::Todo>)del;
+                    EndpointFilterDelegate? filteredInvocation = null;
+
+                    if (options?.EndpointBuilder?.FilterFactories.Count > 0)
+                    {
+                        filteredInvocation = GeneratedRouteBuilderExtensionsCore.BuildFilterDelegate(ic =>
+                        {
+                            if (ic.HttpContext.Response.StatusCode == 400)
+                            {
+                                return ValueTask.FromResult<object?>(Results.Empty);
+                            }
+                            return ValueTask.FromResult<object?>(handler());
+                        },
+                        options.EndpointBuilder,
+                        handler.Method);
+                    }
+
+                    Task RequestHandler(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                            return Task.CompletedTask;
+                        }
+                        httpContext.Response.ContentType ??= "application/json";
+                        var result = handler();
+                        return httpContext.Response.WriteAsJsonAsync(result);
+                    }
+                    async Task RequestHandlerFiltered(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                        }
+                        var result = await filteredInvocation(new DefaultEndpointFilterInvocationContext(httpContext));
+                        await GeneratedRouteBuilderExtensionsCore.ExecuteObjectResult(result, httpContext);
+                    }
+
+                    RequestDelegate targetDelegate = filteredInvocation is null ? RequestHandler : RequestHandlerFiltered;
+                    var metadata = inferredMetadataResult?.EndpointMetadata ?? ReadOnlyCollection<object>.Empty;
+                    return new RequestDelegateResult(targetDelegate, metadata);
+                }),
+            [(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 9)] = (
+               (methodInfo, options) =>
+                {
+                    Debug.Assert(options?.EndpointBuilder != null, "EndpointBuilder not found.");
+                    options.EndpointBuilder.Metadata.Add(new SourceKey(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 9));
+                    return new RequestDelegateMetadataResult { EndpointMetadata = options.EndpointBuilder.Metadata.AsReadOnly() };
+                },
+                (del, options, inferredMetadataResult) =>
+                {
+                    var handler = (Func<global::Microsoft.AspNetCore.Http.HttpResults.Created<global::Todo>>)del;
+                    EndpointFilterDelegate? filteredInvocation = null;
+
+                    if (options?.EndpointBuilder?.FilterFactories.Count > 0)
+                    {
+                        filteredInvocation = GeneratedRouteBuilderExtensionsCore.BuildFilterDelegate(ic =>
+                        {
+                            if (ic.HttpContext.Response.StatusCode == 400)
+                            {
+                                return ValueTask.FromResult<object?>(Results.Empty);
+                            }
+                            return ValueTask.FromResult<object?>(handler());
+                        },
+                        options.EndpointBuilder,
+                        handler.Method);
+                    }
+
+                    Task RequestHandler(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                            return Task.CompletedTask;
+                        }
+                        httpContext.Response.ContentType ??= "";
+                        var result = handler();
+                        return result.ExecuteAsync(httpContext);
+                    }
+                    async Task RequestHandlerFiltered(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                        }
+                        var result = await filteredInvocation(new DefaultEndpointFilterInvocationContext(httpContext));
+                        await GeneratedRouteBuilderExtensionsCore.ExecuteObjectResult(result, httpContext);
+                    }
+
+                    RequestDelegate targetDelegate = filteredInvocation is null ? RequestHandler : RequestHandlerFiltered;
+                    var metadata = inferredMetadataResult?.EndpointMetadata ?? ReadOnlyCollection<object>.Empty;
+                    return new RequestDelegateResult(targetDelegate, metadata);
+                }),
+            [(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 11)] = (
+               (methodInfo, options) =>
+                {
+                    Debug.Assert(options?.EndpointBuilder != null, "EndpointBuilder not found.");
+                    options.EndpointBuilder.Metadata.Add(new SourceKey(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 11));
+                    return new RequestDelegateMetadataResult { EndpointMetadata = options.EndpointBuilder.Metadata.AsReadOnly() };
+                },
+                (del, options, inferredMetadataResult) =>
+                {
+                    var handler = (Func<global::System.String, global::System.String>)del;
+                    EndpointFilterDelegate? filteredInvocation = null;
+
+                    if (options?.EndpointBuilder?.FilterFactories.Count > 0)
+                    {
+                        filteredInvocation = GeneratedRouteBuilderExtensionsCore.BuildFilterDelegate(ic =>
+                        {
+                            if (ic.HttpContext.Response.StatusCode == 400)
+                            {
+                                return ValueTask.FromResult<object?>(Results.Empty);
+                            }
+                            return ValueTask.FromResult<object?>(handler(ic.GetArgument<global::System.String>(0)));
+                        },
+                        options.EndpointBuilder,
+                        handler.Method);
+                    }
+
+                    Task RequestHandler(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: p (Type = global::System.String, IsOptional = False, Source = Query)
+                        var p_raw = httpContext.Request.Query["p"];
+                        if (StringValues.IsNullOrEmpty(p_raw))
+                        {
+                            wasParamCheckFailure = true;
+                        }
+                        var p_local = p_raw.ToString();
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                            return Task.CompletedTask;
+                        }
+                        httpContext.Response.ContentType ??= "text/plain";
+                        var result = handler(p_local);
+                        return httpContext.Response.WriteAsync(result);
+                    }
+                    async Task RequestHandlerFiltered(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: p (Type = global::System.String, IsOptional = False, Source = Query)
+                        var p_raw = httpContext.Request.Query["p"];
+                        if (StringValues.IsNullOrEmpty(p_raw))
+                        {
+                            wasParamCheckFailure = true;
+                        }
+                        var p_local = p_raw.ToString();
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                        }
+                        var result = await filteredInvocation(new EndpointFilterInvocationContext<global::System.String>(httpContext, p_local));
+                        await GeneratedRouteBuilderExtensionsCore.ExecuteObjectResult(result, httpContext);
+                    }
+
+                    RequestDelegate targetDelegate = filteredInvocation is null ? RequestHandler : RequestHandlerFiltered;
+                    var metadata = inferredMetadataResult?.EndpointMetadata ?? ReadOnlyCollection<object>.Empty;
+                    return new RequestDelegateResult(targetDelegate, metadata);
+                }),
+            [(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 12)] = (
+               (methodInfo, options) =>
+                {
+                    Debug.Assert(options?.EndpointBuilder != null, "EndpointBuilder not found.");
+                    options.EndpointBuilder.Metadata.Add(new SourceKey(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 12));
+                    return new RequestDelegateMetadataResult { EndpointMetadata = options.EndpointBuilder.Metadata.AsReadOnly() };
+                },
+                (del, options, inferredMetadataResult) =>
+                {
+                    var handler = (Func<global::System.String, global::System.String>)del;
+                    EndpointFilterDelegate? filteredInvocation = null;
+
+                    if (options?.EndpointBuilder?.FilterFactories.Count > 0)
+                    {
+                        filteredInvocation = GeneratedRouteBuilderExtensionsCore.BuildFilterDelegate(ic =>
+                        {
+                            if (ic.HttpContext.Response.StatusCode == 400)
+                            {
+                                return ValueTask.FromResult<object?>(Results.Empty);
+                            }
+                            return ValueTask.FromResult<object?>(handler(ic.GetArgument<global::System.String>(0)));
+                        },
+                        options.EndpointBuilder,
+                        handler.Method);
+                    }
+
+                    Task RequestHandler(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: h (Type = global::System.String, IsOptional = False, Source = Header)
+                        var h_raw = httpContext.Request.Headers["h"];
+                        if (StringValues.IsNullOrEmpty(h_raw))
+                        {
+                            wasParamCheckFailure = true;
+                        }
+                        var h_local = h_raw.ToString();
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                            return Task.CompletedTask;
+                        }
+                        httpContext.Response.ContentType ??= "text/plain";
+                        var result = handler(h_local);
+                        return httpContext.Response.WriteAsync(result);
+                    }
+                    async Task RequestHandlerFiltered(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: h (Type = global::System.String, IsOptional = False, Source = Header)
+                        var h_raw = httpContext.Request.Headers["h"];
+                        if (StringValues.IsNullOrEmpty(h_raw))
+                        {
+                            wasParamCheckFailure = true;
+                        }
+                        var h_local = h_raw.ToString();
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                        }
+                        var result = await filteredInvocation(new EndpointFilterInvocationContext<global::System.String>(httpContext, h_local));
+                        await GeneratedRouteBuilderExtensionsCore.ExecuteObjectResult(result, httpContext);
+                    }
+
+                    RequestDelegate targetDelegate = filteredInvocation is null ? RequestHandler : RequestHandlerFiltered;
+                    var metadata = inferredMetadataResult?.EndpointMetadata ?? ReadOnlyCollection<object>.Empty;
+                    return new RequestDelegateResult(targetDelegate, metadata);
+                }),
+            [(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 13)] = (
+               (methodInfo, options) =>
+                {
+                    Debug.Assert(options?.EndpointBuilder != null, "EndpointBuilder not found.");
+                    options.EndpointBuilder.Metadata.Add(new SourceKey(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 13));
+                    return new RequestDelegateMetadataResult { EndpointMetadata = options.EndpointBuilder.Metadata.AsReadOnly() };
+                },
+                (del, options, inferredMetadataResult) =>
+                {
+                    var handler = (Func<global::System.String, global::System.String>)del;
+                    EndpointFilterDelegate? filteredInvocation = null;
+
+                    if (options?.EndpointBuilder?.FilterFactories.Count > 0)
+                    {
+                        filteredInvocation = GeneratedRouteBuilderExtensionsCore.BuildFilterDelegate(ic =>
+                        {
+                            if (ic.HttpContext.Response.StatusCode == 400)
+                            {
+                                return ValueTask.FromResult<object?>(Results.Empty);
+                            }
+                            return ValueTask.FromResult<object?>(handler(ic.GetArgument<global::System.String>(0)));
+                        },
+                        options.EndpointBuilder,
+                        handler.Method);
+                    }
+
+                    Task RequestHandler(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: r (Type = global::System.String, IsOptional = False, Source = Route)
+                        if (options?.RouteParameterNames?.Contains("r", StringComparer.OrdinalIgnoreCase) != true)
+                        {
+                            throw new InvalidOperationException($"'r' is not a route parameter.");
+                        }
+                        var r_raw = httpContext.Request.RouteValues["r"]?.ToString();
+                        if (r_raw == null)
+                        {
+                            wasParamCheckFailure = true;
+                        }
+                        var r_local = r_raw;
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                            return Task.CompletedTask;
+                        }
+                        httpContext.Response.ContentType ??= "text/plain";
+                        var result = handler(r_local!);
+                        return httpContext.Response.WriteAsync(result);
+                    }
+                    async Task RequestHandlerFiltered(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: r (Type = global::System.String, IsOptional = False, Source = Route)
+                        if (options?.RouteParameterNames?.Contains("r", StringComparer.OrdinalIgnoreCase) != true)
+                        {
+                            throw new InvalidOperationException($"'r' is not a route parameter.");
+                        }
+                        var r_raw = httpContext.Request.RouteValues["r"]?.ToString();
+                        if (r_raw == null)
+                        {
+                            wasParamCheckFailure = true;
+                        }
+                        var r_local = r_raw;
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                        }
+                        var result = await filteredInvocation(new EndpointFilterInvocationContext<global::System.String>(httpContext, r_local!));
+                        await GeneratedRouteBuilderExtensionsCore.ExecuteObjectResult(result, httpContext);
+                    }
+
+                    RequestDelegate targetDelegate = filteredInvocation is null ? RequestHandler : RequestHandlerFiltered;
+                    var metadata = inferredMetadataResult?.EndpointMetadata ?? ReadOnlyCollection<object>.Empty;
+                    return new RequestDelegateResult(targetDelegate, metadata);
+                }),
+            [(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 14)] = (
+               (methodInfo, options) =>
+                {
+                    Debug.Assert(options?.EndpointBuilder != null, "EndpointBuilder not found.");
+                    options.EndpointBuilder.Metadata.Add(new SourceKey(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 14));
+                    return new RequestDelegateMetadataResult { EndpointMetadata = options.EndpointBuilder.Metadata.AsReadOnly() };
+                },
+                (del, options, inferredMetadataResult) =>
+                {
+                    var handler = (Func<global::System.String, global::System.String>)del;
+                    EndpointFilterDelegate? filteredInvocation = null;
+
+                    if (options?.EndpointBuilder?.FilterFactories.Count > 0)
+                    {
+                        filteredInvocation = GeneratedRouteBuilderExtensionsCore.BuildFilterDelegate(ic =>
+                        {
+                            if (ic.HttpContext.Response.StatusCode == 400)
+                            {
+                                return ValueTask.FromResult<object?>(Results.Empty);
+                            }
+                            return ValueTask.FromResult<object?>(handler(ic.GetArgument<global::System.String>(0)));
+                        },
+                        options.EndpointBuilder,
+                        handler.Method);
+                    }
+
+                    Task RequestHandler(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: r (Type = global::System.String, IsOptional = False, Source = RouteOrQuery)
+                        var r_raw = options?.RouteParameterNames?.Contains("r", StringComparer.OrdinalIgnoreCase) == true? new StringValues(httpContext.Request.RouteValues[$"r"]?.ToString()): httpContext.Request.Query[$"r"];;
+                        if (r_raw is StringValues { Count: 0 })
+                        {
+                            wasParamCheckFailure = true;
+                        }
+                        var r_local = r_raw;
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                            return Task.CompletedTask;
+                        }
+                        httpContext.Response.ContentType ??= "text/plain";
+                        var result = handler(r_local!);
+                        return httpContext.Response.WriteAsync(result);
+                    }
+                    async Task RequestHandlerFiltered(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: r (Type = global::System.String, IsOptional = False, Source = RouteOrQuery)
+                        var r_raw = options?.RouteParameterNames?.Contains("r", StringComparer.OrdinalIgnoreCase) == true? new StringValues(httpContext.Request.RouteValues[$"r"]?.ToString()): httpContext.Request.Query[$"r"];;
+                        if (r_raw is StringValues { Count: 0 })
+                        {
+                            wasParamCheckFailure = true;
+                        }
+                        var r_local = r_raw;
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                        }
+                        var result = await filteredInvocation(new EndpointFilterInvocationContext<global::System.String>(httpContext, r_local!));
+                        await GeneratedRouteBuilderExtensionsCore.ExecuteObjectResult(result, httpContext);
+                    }
+
+                    RequestDelegate targetDelegate = filteredInvocation is null ? RequestHandler : RequestHandlerFiltered;
+                    var metadata = inferredMetadataResult?.EndpointMetadata ?? ReadOnlyCollection<object>.Empty;
+                    return new RequestDelegateResult(targetDelegate, metadata);
+                }),
+            [(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 16)] = (
+               (methodInfo, options) =>
+                {
+                    Debug.Assert(options?.EndpointBuilder != null, "EndpointBuilder not found.");
+                    options.EndpointBuilder.Metadata.Add(new SourceKey(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 16));
+                    return new RequestDelegateMetadataResult { EndpointMetadata = options.EndpointBuilder.Metadata.AsReadOnly() };
+                },
+                (del, options, inferredMetadataResult) =>
+                {
+                    var handler = (Func<global::Todo, global::System.String>)del;
+                    EndpointFilterDelegate? filteredInvocation = null;
+
+                    if (options?.EndpointBuilder?.FilterFactories.Count > 0)
+                    {
+                        filteredInvocation = GeneratedRouteBuilderExtensionsCore.BuildFilterDelegate(ic =>
+                        {
+                            if (ic.HttpContext.Response.StatusCode == 400)
+                            {
+                                return ValueTask.FromResult<object?>(Results.Empty);
+                            }
+                            return ValueTask.FromResult<object?>(handler(ic.GetArgument<global::Todo>(0)));
+                        },
+                        options.EndpointBuilder,
+                        handler.Method);
+                    }
+
+                    async Task RequestHandler(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: todo (Type = global::Todo, IsOptional = False, Source = JsonBody)
+                        var (isSuccessful, todo_local) = await GeneratedRouteBuilderExtensionsCore.TryResolveBody<global::Todo>(httpContext, false);
+                        if (!isSuccessful)
+                        {
+                            return;
+                        }
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                            return;
+                        }
+                        httpContext.Response.ContentType ??= "text/plain";
+                        var result = handler(todo_local!);
+                        await httpContext.Response.WriteAsync(result);
+                    }
+                    async Task RequestHandlerFiltered(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: todo (Type = global::Todo, IsOptional = False, Source = JsonBody)
+                        var (isSuccessful, todo_local) = await GeneratedRouteBuilderExtensionsCore.TryResolveBody<global::Todo>(httpContext, false);
+                        if (!isSuccessful)
+                        {
+                            return;
+                        }
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                        }
+                        var result = await filteredInvocation(new EndpointFilterInvocationContext<global::Todo>(httpContext, todo_local!));
+                        await GeneratedRouteBuilderExtensionsCore.ExecuteObjectResult(result, httpContext);
+                    }
+
+                    RequestDelegate targetDelegate = filteredInvocation is null ? RequestHandler : RequestHandlerFiltered;
+                    var metadata = inferredMetadataResult?.EndpointMetadata ?? ReadOnlyCollection<object>.Empty;
+                    return new RequestDelegateResult(targetDelegate, metadata);
+                }),
+            [(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 17)] = (
+               (methodInfo, options) =>
+                {
+                    Debug.Assert(options?.EndpointBuilder != null, "EndpointBuilder not found.");
+                    options.EndpointBuilder.Metadata.Add(new SourceKey(@"/Users/captainsafia/repos/RequestDelegateGeneratorApp/Program.cs", 17));
+                    return new RequestDelegateMetadataResult { EndpointMetadata = options.EndpointBuilder.Metadata.AsReadOnly() };
+                },
+                (del, options, inferredMetadataResult) =>
+                {
+                    var handler = (Func<global::Todo, global::System.String>)del;
+                    EndpointFilterDelegate? filteredInvocation = null;
+
+                    if (options?.EndpointBuilder?.FilterFactories.Count > 0)
+                    {
+                        filteredInvocation = GeneratedRouteBuilderExtensionsCore.BuildFilterDelegate(ic =>
+                        {
+                            if (ic.HttpContext.Response.StatusCode == 400)
+                            {
+                                return ValueTask.FromResult<object?>(Results.Empty);
+                            }
+                            return ValueTask.FromResult<object?>(handler(ic.GetArgument<global::Todo>(0)));
+                        },
+                        options.EndpointBuilder,
+                        handler.Method);
+                    }
+
+                    Task RequestHandler(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: todo (Type = global::Todo, IsOptional = False, Source = Service)
+                        var todo_local = httpContext.RequestServices.GetRequiredService<Todo>();
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                            return Task.CompletedTask;
+                        }
+                        httpContext.Response.ContentType ??= "text/plain";
+                        var result = handler(todo_local);
+                        return httpContext.Response.WriteAsync(result);
+                    }
+                    async Task RequestHandlerFiltered(HttpContext httpContext)
+                    {
+                        var wasParamCheckFailure = false;
+                        // Endpoint Parameter: todo (Type = global::Todo, IsOptional = False, Source = Service)
+                        var todo_local = httpContext.RequestServices.GetRequiredService<Todo>();
+
+                        if (wasParamCheckFailure)
+                        {
+                            httpContext.Response.StatusCode = 400;
+                        }
+                        var result = await filteredInvocation(new EndpointFilterInvocationContext<global::Todo>(httpContext, todo_local));
+                        await GeneratedRouteBuilderExtensionsCore.ExecuteObjectResult(result, httpContext);
+                    }
+
+                    RequestDelegate targetDelegate = filteredInvocation is null ? RequestHandler : RequestHandlerFiltered;
+                    var metadata = inferredMetadataResult?.EndpointMetadata ?? ReadOnlyCollection<object>.Empty;
+                    return new RequestDelegateResult(targetDelegate, metadata);
+                }),
 
         };
 
@@ -154,16 +766,6 @@ namespace Microsoft.AspNetCore.Http.Generated
             return filteredInvocation;
         }
 
-        private static void PopulateMetadata<T>(MethodInfo method, EndpointBuilder builder) where T : IEndpointMetadataProvider
-        {
-            T.PopulateMetadata(method, builder);
-        }
-
-        private static void PopulateMetadata<T>(ParameterInfo parameter, EndpointBuilder builder) where T : IEndpointParameterMetadataProvider
-        {
-            T.PopulateMetadata(parameter, builder);
-        }
-
         private static Task ExecuteObjectResult(object? obj, HttpContext httpContext)
         {
             if (obj is IResult r)
@@ -178,6 +780,1416 @@ namespace Microsoft.AspNetCore.Http.Generated
             {
                 return httpContext.Response.WriteAsJsonAsync(obj);
             }
+        }
+
+        private static async ValueTask<(bool, T?)> TryResolveBody<T>(HttpContext httpContext, bool allowEmpty)
+        {
+            var feature = httpContext.Features.Get<Microsoft.AspNetCore.Http.Features.IHttpRequestBodyDetectionFeature>();
+
+            if (feature?.CanHaveBody == true)
+            {
+                if (!httpContext.Request.HasJsonContentType())
+                {
+                    httpContext.Response.StatusCode = StatusCodes.Status415UnsupportedMediaType;
+                    return (false, default);
+                }
+                try
+                {
+                    var bodyValue = await httpContext.Request.ReadFromJsonAsync<T>();
+                    if (!allowEmpty && bodyValue == null)
+                    {
+                        httpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
+                        return (false, bodyValue);
+                    }
+                    return (true, bodyValue);
+                }
+                catch (IOException)
+                {
+                    return (false, default);
+                }
+                catch (System.Text.Json.JsonException)
+                {
+                    httpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return (false, default);
+                }
+            }
+            return (false, default);
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.AspNetCore.Http.Generators, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60", "8.0.0.0")]
+    file class EndpointFilterInvocationContext<T0> : EndpointFilterInvocationContext, IList<object?>
+    {
+        internal EndpointFilterInvocationContext(HttpContext httpContext, T0 arg0)
+        {
+            HttpContext = httpContext;
+            Arg0 = arg0;
+        }
+
+        public object? this[int index]
+        {
+            get => index switch
+            {
+                0 => Arg0,
+                _ => new IndexOutOfRangeException()
+            };
+            set
+            {
+                switch (index)
+                {
+                   case 0:
+                        Arg0 = (T0)(object?)value!;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public override HttpContext HttpContext { get; }
+
+        public override IList<object?> Arguments => this;
+
+        public T0 Arg0 { get; set; }
+
+        public int Count => 1;
+
+        public bool IsReadOnly => false;
+
+        public bool IsFixedSize => true;
+
+        public void Add(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Clear()
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Contains(object? item)
+        {
+            return IndexOf(item) >= 0;
+        }
+
+        public void CopyTo(object?[] array, int arrayIndex)
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                array[arrayIndex++] = Arguments[i];
+            }
+        }
+
+        public IEnumerator<object?> GetEnumerator()
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                yield return Arguments[i];
+            }
+        }
+
+        public override T GetArgument<T>(int index)
+        {
+            return index switch
+            {
+               0 => (T)(object)Arg0!,
+               _ => throw new IndexOutOfRangeException()
+            };
+        }
+
+        public int IndexOf(object? item)
+        {
+            return Arguments.IndexOf(item);
+        }
+
+        public void Insert(int index, object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Remove(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.AspNetCore.Http.Generators, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60", "8.0.0.0")]
+    file class EndpointFilterInvocationContext<T0, T1> : EndpointFilterInvocationContext, IList<object?>
+    {
+        internal EndpointFilterInvocationContext(HttpContext httpContext, T0 arg0, T1 arg1)
+        {
+            HttpContext = httpContext;
+            Arg0 = arg0;
+            Arg1 = arg1;
+        }
+
+        public object? this[int index]
+        {
+            get => index switch
+            {
+                0 => Arg0,
+                1 => Arg1,
+                _ => new IndexOutOfRangeException()
+            };
+            set
+            {
+                switch (index)
+                {
+                   case 0:
+                        Arg0 = (T0)(object?)value!;
+                        break;
+                   case 1:
+                        Arg1 = (T1)(object?)value!;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public override HttpContext HttpContext { get; }
+
+        public override IList<object?> Arguments => this;
+
+        public T0 Arg0 { get; set; }
+        public T1 Arg1 { get; set; }
+
+        public int Count => 2;
+
+        public bool IsReadOnly => false;
+
+        public bool IsFixedSize => true;
+
+        public void Add(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Clear()
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Contains(object? item)
+        {
+            return IndexOf(item) >= 0;
+        }
+
+        public void CopyTo(object?[] array, int arrayIndex)
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                array[arrayIndex++] = Arguments[i];
+            }
+        }
+
+        public IEnumerator<object?> GetEnumerator()
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                yield return Arguments[i];
+            }
+        }
+
+        public override T GetArgument<T>(int index)
+        {
+            return index switch
+            {
+               0 => (T)(object)Arg0!,
+               1 => (T)(object)Arg1!,
+               _ => throw new IndexOutOfRangeException()
+            };
+        }
+
+        public int IndexOf(object? item)
+        {
+            return Arguments.IndexOf(item);
+        }
+
+        public void Insert(int index, object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Remove(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.AspNetCore.Http.Generators, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60", "8.0.0.0")]
+    file class EndpointFilterInvocationContext<T0, T1, T2> : EndpointFilterInvocationContext, IList<object?>
+    {
+        internal EndpointFilterInvocationContext(HttpContext httpContext, T0 arg0, T1 arg1, T2 arg2)
+        {
+            HttpContext = httpContext;
+            Arg0 = arg0;
+            Arg1 = arg1;
+            Arg2 = arg2;
+        }
+
+        public object? this[int index]
+        {
+            get => index switch
+            {
+                0 => Arg0,
+                1 => Arg1,
+                2 => Arg2,
+                _ => new IndexOutOfRangeException()
+            };
+            set
+            {
+                switch (index)
+                {
+                   case 0:
+                        Arg0 = (T0)(object?)value!;
+                        break;
+                   case 1:
+                        Arg1 = (T1)(object?)value!;
+                        break;
+                   case 2:
+                        Arg2 = (T2)(object?)value!;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public override HttpContext HttpContext { get; }
+
+        public override IList<object?> Arguments => this;
+
+        public T0 Arg0 { get; set; }
+        public T1 Arg1 { get; set; }
+        public T2 Arg2 { get; set; }
+
+        public int Count => 3;
+
+        public bool IsReadOnly => false;
+
+        public bool IsFixedSize => true;
+
+        public void Add(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Clear()
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Contains(object? item)
+        {
+            return IndexOf(item) >= 0;
+        }
+
+        public void CopyTo(object?[] array, int arrayIndex)
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                array[arrayIndex++] = Arguments[i];
+            }
+        }
+
+        public IEnumerator<object?> GetEnumerator()
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                yield return Arguments[i];
+            }
+        }
+
+        public override T GetArgument<T>(int index)
+        {
+            return index switch
+            {
+               0 => (T)(object)Arg0!,
+               1 => (T)(object)Arg1!,
+               2 => (T)(object)Arg2!,
+               _ => throw new IndexOutOfRangeException()
+            };
+        }
+
+        public int IndexOf(object? item)
+        {
+            return Arguments.IndexOf(item);
+        }
+
+        public void Insert(int index, object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Remove(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.AspNetCore.Http.Generators, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60", "8.0.0.0")]
+    file class EndpointFilterInvocationContext<T0, T1, T2, T3> : EndpointFilterInvocationContext, IList<object?>
+    {
+        internal EndpointFilterInvocationContext(HttpContext httpContext, T0 arg0, T1 arg1, T2 arg2, T3 arg3)
+        {
+            HttpContext = httpContext;
+            Arg0 = arg0;
+            Arg1 = arg1;
+            Arg2 = arg2;
+            Arg3 = arg3;
+        }
+
+        public object? this[int index]
+        {
+            get => index switch
+            {
+                0 => Arg0,
+                1 => Arg1,
+                2 => Arg2,
+                3 => Arg3,
+                _ => new IndexOutOfRangeException()
+            };
+            set
+            {
+                switch (index)
+                {
+                   case 0:
+                        Arg0 = (T0)(object?)value!;
+                        break;
+                   case 1:
+                        Arg1 = (T1)(object?)value!;
+                        break;
+                   case 2:
+                        Arg2 = (T2)(object?)value!;
+                        break;
+                   case 3:
+                        Arg3 = (T3)(object?)value!;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public override HttpContext HttpContext { get; }
+
+        public override IList<object?> Arguments => this;
+
+        public T0 Arg0 { get; set; }
+        public T1 Arg1 { get; set; }
+        public T2 Arg2 { get; set; }
+        public T3 Arg3 { get; set; }
+
+        public int Count => 4;
+
+        public bool IsReadOnly => false;
+
+        public bool IsFixedSize => true;
+
+        public void Add(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Clear()
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Contains(object? item)
+        {
+            return IndexOf(item) >= 0;
+        }
+
+        public void CopyTo(object?[] array, int arrayIndex)
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                array[arrayIndex++] = Arguments[i];
+            }
+        }
+
+        public IEnumerator<object?> GetEnumerator()
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                yield return Arguments[i];
+            }
+        }
+
+        public override T GetArgument<T>(int index)
+        {
+            return index switch
+            {
+               0 => (T)(object)Arg0!,
+               1 => (T)(object)Arg1!,
+               2 => (T)(object)Arg2!,
+               3 => (T)(object)Arg3!,
+               _ => throw new IndexOutOfRangeException()
+            };
+        }
+
+        public int IndexOf(object? item)
+        {
+            return Arguments.IndexOf(item);
+        }
+
+        public void Insert(int index, object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Remove(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.AspNetCore.Http.Generators, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60", "8.0.0.0")]
+    file class EndpointFilterInvocationContext<T0, T1, T2, T3, T4> : EndpointFilterInvocationContext, IList<object?>
+    {
+        internal EndpointFilterInvocationContext(HttpContext httpContext, T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+        {
+            HttpContext = httpContext;
+            Arg0 = arg0;
+            Arg1 = arg1;
+            Arg2 = arg2;
+            Arg3 = arg3;
+            Arg4 = arg4;
+        }
+
+        public object? this[int index]
+        {
+            get => index switch
+            {
+                0 => Arg0,
+                1 => Arg1,
+                2 => Arg2,
+                3 => Arg3,
+                4 => Arg4,
+                _ => new IndexOutOfRangeException()
+            };
+            set
+            {
+                switch (index)
+                {
+                   case 0:
+                        Arg0 = (T0)(object?)value!;
+                        break;
+                   case 1:
+                        Arg1 = (T1)(object?)value!;
+                        break;
+                   case 2:
+                        Arg2 = (T2)(object?)value!;
+                        break;
+                   case 3:
+                        Arg3 = (T3)(object?)value!;
+                        break;
+                   case 4:
+                        Arg4 = (T4)(object?)value!;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public override HttpContext HttpContext { get; }
+
+        public override IList<object?> Arguments => this;
+
+        public T0 Arg0 { get; set; }
+        public T1 Arg1 { get; set; }
+        public T2 Arg2 { get; set; }
+        public T3 Arg3 { get; set; }
+        public T4 Arg4 { get; set; }
+
+        public int Count => 5;
+
+        public bool IsReadOnly => false;
+
+        public bool IsFixedSize => true;
+
+        public void Add(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Clear()
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Contains(object? item)
+        {
+            return IndexOf(item) >= 0;
+        }
+
+        public void CopyTo(object?[] array, int arrayIndex)
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                array[arrayIndex++] = Arguments[i];
+            }
+        }
+
+        public IEnumerator<object?> GetEnumerator()
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                yield return Arguments[i];
+            }
+        }
+
+        public override T GetArgument<T>(int index)
+        {
+            return index switch
+            {
+               0 => (T)(object)Arg0!,
+               1 => (T)(object)Arg1!,
+               2 => (T)(object)Arg2!,
+               3 => (T)(object)Arg3!,
+               4 => (T)(object)Arg4!,
+               _ => throw new IndexOutOfRangeException()
+            };
+        }
+
+        public int IndexOf(object? item)
+        {
+            return Arguments.IndexOf(item);
+        }
+
+        public void Insert(int index, object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Remove(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.AspNetCore.Http.Generators, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60", "8.0.0.0")]
+    file class EndpointFilterInvocationContext<T0, T1, T2, T3, T4, T5> : EndpointFilterInvocationContext, IList<object?>
+    {
+        internal EndpointFilterInvocationContext(HttpContext httpContext, T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
+        {
+            HttpContext = httpContext;
+            Arg0 = arg0;
+            Arg1 = arg1;
+            Arg2 = arg2;
+            Arg3 = arg3;
+            Arg4 = arg4;
+            Arg5 = arg5;
+        }
+
+        public object? this[int index]
+        {
+            get => index switch
+            {
+                0 => Arg0,
+                1 => Arg1,
+                2 => Arg2,
+                3 => Arg3,
+                4 => Arg4,
+                5 => Arg5,
+                _ => new IndexOutOfRangeException()
+            };
+            set
+            {
+                switch (index)
+                {
+                   case 0:
+                        Arg0 = (T0)(object?)value!;
+                        break;
+                   case 1:
+                        Arg1 = (T1)(object?)value!;
+                        break;
+                   case 2:
+                        Arg2 = (T2)(object?)value!;
+                        break;
+                   case 3:
+                        Arg3 = (T3)(object?)value!;
+                        break;
+                   case 4:
+                        Arg4 = (T4)(object?)value!;
+                        break;
+                   case 5:
+                        Arg5 = (T5)(object?)value!;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public override HttpContext HttpContext { get; }
+
+        public override IList<object?> Arguments => this;
+
+        public T0 Arg0 { get; set; }
+        public T1 Arg1 { get; set; }
+        public T2 Arg2 { get; set; }
+        public T3 Arg3 { get; set; }
+        public T4 Arg4 { get; set; }
+        public T5 Arg5 { get; set; }
+
+        public int Count => 6;
+
+        public bool IsReadOnly => false;
+
+        public bool IsFixedSize => true;
+
+        public void Add(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Clear()
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Contains(object? item)
+        {
+            return IndexOf(item) >= 0;
+        }
+
+        public void CopyTo(object?[] array, int arrayIndex)
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                array[arrayIndex++] = Arguments[i];
+            }
+        }
+
+        public IEnumerator<object?> GetEnumerator()
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                yield return Arguments[i];
+            }
+        }
+
+        public override T GetArgument<T>(int index)
+        {
+            return index switch
+            {
+               0 => (T)(object)Arg0!,
+               1 => (T)(object)Arg1!,
+               2 => (T)(object)Arg2!,
+               3 => (T)(object)Arg3!,
+               4 => (T)(object)Arg4!,
+               5 => (T)(object)Arg5!,
+               _ => throw new IndexOutOfRangeException()
+            };
+        }
+
+        public int IndexOf(object? item)
+        {
+            return Arguments.IndexOf(item);
+        }
+
+        public void Insert(int index, object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Remove(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.AspNetCore.Http.Generators, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60", "8.0.0.0")]
+    file class EndpointFilterInvocationContext<T0, T1, T2, T3, T4, T5, T6> : EndpointFilterInvocationContext, IList<object?>
+    {
+        internal EndpointFilterInvocationContext(HttpContext httpContext, T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6)
+        {
+            HttpContext = httpContext;
+            Arg0 = arg0;
+            Arg1 = arg1;
+            Arg2 = arg2;
+            Arg3 = arg3;
+            Arg4 = arg4;
+            Arg5 = arg5;
+            Arg6 = arg6;
+        }
+
+        public object? this[int index]
+        {
+            get => index switch
+            {
+                0 => Arg0,
+                1 => Arg1,
+                2 => Arg2,
+                3 => Arg3,
+                4 => Arg4,
+                5 => Arg5,
+                6 => Arg6,
+                _ => new IndexOutOfRangeException()
+            };
+            set
+            {
+                switch (index)
+                {
+                   case 0:
+                        Arg0 = (T0)(object?)value!;
+                        break;
+                   case 1:
+                        Arg1 = (T1)(object?)value!;
+                        break;
+                   case 2:
+                        Arg2 = (T2)(object?)value!;
+                        break;
+                   case 3:
+                        Arg3 = (T3)(object?)value!;
+                        break;
+                   case 4:
+                        Arg4 = (T4)(object?)value!;
+                        break;
+                   case 5:
+                        Arg5 = (T5)(object?)value!;
+                        break;
+                   case 6:
+                        Arg6 = (T6)(object?)value!;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public override HttpContext HttpContext { get; }
+
+        public override IList<object?> Arguments => this;
+
+        public T0 Arg0 { get; set; }
+        public T1 Arg1 { get; set; }
+        public T2 Arg2 { get; set; }
+        public T3 Arg3 { get; set; }
+        public T4 Arg4 { get; set; }
+        public T5 Arg5 { get; set; }
+        public T6 Arg6 { get; set; }
+
+        public int Count => 7;
+
+        public bool IsReadOnly => false;
+
+        public bool IsFixedSize => true;
+
+        public void Add(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Clear()
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Contains(object? item)
+        {
+            return IndexOf(item) >= 0;
+        }
+
+        public void CopyTo(object?[] array, int arrayIndex)
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                array[arrayIndex++] = Arguments[i];
+            }
+        }
+
+        public IEnumerator<object?> GetEnumerator()
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                yield return Arguments[i];
+            }
+        }
+
+        public override T GetArgument<T>(int index)
+        {
+            return index switch
+            {
+               0 => (T)(object)Arg0!,
+               1 => (T)(object)Arg1!,
+               2 => (T)(object)Arg2!,
+               3 => (T)(object)Arg3!,
+               4 => (T)(object)Arg4!,
+               5 => (T)(object)Arg5!,
+               6 => (T)(object)Arg6!,
+               _ => throw new IndexOutOfRangeException()
+            };
+        }
+
+        public int IndexOf(object? item)
+        {
+            return Arguments.IndexOf(item);
+        }
+
+        public void Insert(int index, object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Remove(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.AspNetCore.Http.Generators, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60", "8.0.0.0")]
+    file class EndpointFilterInvocationContext<T0, T1, T2, T3, T4, T5, T6, T7> : EndpointFilterInvocationContext, IList<object?>
+    {
+        internal EndpointFilterInvocationContext(HttpContext httpContext, T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7)
+        {
+            HttpContext = httpContext;
+            Arg0 = arg0;
+            Arg1 = arg1;
+            Arg2 = arg2;
+            Arg3 = arg3;
+            Arg4 = arg4;
+            Arg5 = arg5;
+            Arg6 = arg6;
+            Arg7 = arg7;
+        }
+
+        public object? this[int index]
+        {
+            get => index switch
+            {
+                0 => Arg0,
+                1 => Arg1,
+                2 => Arg2,
+                3 => Arg3,
+                4 => Arg4,
+                5 => Arg5,
+                6 => Arg6,
+                7 => Arg7,
+                _ => new IndexOutOfRangeException()
+            };
+            set
+            {
+                switch (index)
+                {
+                   case 0:
+                        Arg0 = (T0)(object?)value!;
+                        break;
+                   case 1:
+                        Arg1 = (T1)(object?)value!;
+                        break;
+                   case 2:
+                        Arg2 = (T2)(object?)value!;
+                        break;
+                   case 3:
+                        Arg3 = (T3)(object?)value!;
+                        break;
+                   case 4:
+                        Arg4 = (T4)(object?)value!;
+                        break;
+                   case 5:
+                        Arg5 = (T5)(object?)value!;
+                        break;
+                   case 6:
+                        Arg6 = (T6)(object?)value!;
+                        break;
+                   case 7:
+                        Arg7 = (T7)(object?)value!;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public override HttpContext HttpContext { get; }
+
+        public override IList<object?> Arguments => this;
+
+        public T0 Arg0 { get; set; }
+        public T1 Arg1 { get; set; }
+        public T2 Arg2 { get; set; }
+        public T3 Arg3 { get; set; }
+        public T4 Arg4 { get; set; }
+        public T5 Arg5 { get; set; }
+        public T6 Arg6 { get; set; }
+        public T7 Arg7 { get; set; }
+
+        public int Count => 8;
+
+        public bool IsReadOnly => false;
+
+        public bool IsFixedSize => true;
+
+        public void Add(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Clear()
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Contains(object? item)
+        {
+            return IndexOf(item) >= 0;
+        }
+
+        public void CopyTo(object?[] array, int arrayIndex)
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                array[arrayIndex++] = Arguments[i];
+            }
+        }
+
+        public IEnumerator<object?> GetEnumerator()
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                yield return Arguments[i];
+            }
+        }
+
+        public override T GetArgument<T>(int index)
+        {
+            return index switch
+            {
+               0 => (T)(object)Arg0!,
+               1 => (T)(object)Arg1!,
+               2 => (T)(object)Arg2!,
+               3 => (T)(object)Arg3!,
+               4 => (T)(object)Arg4!,
+               5 => (T)(object)Arg5!,
+               6 => (T)(object)Arg6!,
+               7 => (T)(object)Arg7!,
+               _ => throw new IndexOutOfRangeException()
+            };
+        }
+
+        public int IndexOf(object? item)
+        {
+            return Arguments.IndexOf(item);
+        }
+
+        public void Insert(int index, object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Remove(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.AspNetCore.Http.Generators, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60", "8.0.0.0")]
+    file class EndpointFilterInvocationContext<T0, T1, T2, T3, T4, T5, T6, T7, T8> : EndpointFilterInvocationContext, IList<object?>
+    {
+        internal EndpointFilterInvocationContext(HttpContext httpContext, T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8)
+        {
+            HttpContext = httpContext;
+            Arg0 = arg0;
+            Arg1 = arg1;
+            Arg2 = arg2;
+            Arg3 = arg3;
+            Arg4 = arg4;
+            Arg5 = arg5;
+            Arg6 = arg6;
+            Arg7 = arg7;
+            Arg8 = arg8;
+        }
+
+        public object? this[int index]
+        {
+            get => index switch
+            {
+                0 => Arg0,
+                1 => Arg1,
+                2 => Arg2,
+                3 => Arg3,
+                4 => Arg4,
+                5 => Arg5,
+                6 => Arg6,
+                7 => Arg7,
+                8 => Arg8,
+                _ => new IndexOutOfRangeException()
+            };
+            set
+            {
+                switch (index)
+                {
+                   case 0:
+                        Arg0 = (T0)(object?)value!;
+                        break;
+                   case 1:
+                        Arg1 = (T1)(object?)value!;
+                        break;
+                   case 2:
+                        Arg2 = (T2)(object?)value!;
+                        break;
+                   case 3:
+                        Arg3 = (T3)(object?)value!;
+                        break;
+                   case 4:
+                        Arg4 = (T4)(object?)value!;
+                        break;
+                   case 5:
+                        Arg5 = (T5)(object?)value!;
+                        break;
+                   case 6:
+                        Arg6 = (T6)(object?)value!;
+                        break;
+                   case 7:
+                        Arg7 = (T7)(object?)value!;
+                        break;
+                   case 8:
+                        Arg8 = (T8)(object?)value!;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public override HttpContext HttpContext { get; }
+
+        public override IList<object?> Arguments => this;
+
+        public T0 Arg0 { get; set; }
+        public T1 Arg1 { get; set; }
+        public T2 Arg2 { get; set; }
+        public T3 Arg3 { get; set; }
+        public T4 Arg4 { get; set; }
+        public T5 Arg5 { get; set; }
+        public T6 Arg6 { get; set; }
+        public T7 Arg7 { get; set; }
+        public T8 Arg8 { get; set; }
+
+        public int Count => 9;
+
+        public bool IsReadOnly => false;
+
+        public bool IsFixedSize => true;
+
+        public void Add(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Clear()
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Contains(object? item)
+        {
+            return IndexOf(item) >= 0;
+        }
+
+        public void CopyTo(object?[] array, int arrayIndex)
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                array[arrayIndex++] = Arguments[i];
+            }
+        }
+
+        public IEnumerator<object?> GetEnumerator()
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                yield return Arguments[i];
+            }
+        }
+
+        public override T GetArgument<T>(int index)
+        {
+            return index switch
+            {
+               0 => (T)(object)Arg0!,
+               1 => (T)(object)Arg1!,
+               2 => (T)(object)Arg2!,
+               3 => (T)(object)Arg3!,
+               4 => (T)(object)Arg4!,
+               5 => (T)(object)Arg5!,
+               6 => (T)(object)Arg6!,
+               7 => (T)(object)Arg7!,
+               8 => (T)(object)Arg8!,
+               _ => throw new IndexOutOfRangeException()
+            };
+        }
+
+        public int IndexOf(object? item)
+        {
+            return Arguments.IndexOf(item);
+        }
+
+        public void Insert(int index, object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Remove(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.AspNetCore.Http.Generators, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60", "8.0.0.0")]
+    file class EndpointFilterInvocationContext<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> : EndpointFilterInvocationContext, IList<object?>
+    {
+        internal EndpointFilterInvocationContext(HttpContext httpContext, T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9)
+        {
+            HttpContext = httpContext;
+            Arg0 = arg0;
+            Arg1 = arg1;
+            Arg2 = arg2;
+            Arg3 = arg3;
+            Arg4 = arg4;
+            Arg5 = arg5;
+            Arg6 = arg6;
+            Arg7 = arg7;
+            Arg8 = arg8;
+            Arg9 = arg9;
+        }
+
+        public object? this[int index]
+        {
+            get => index switch
+            {
+                0 => Arg0,
+                1 => Arg1,
+                2 => Arg2,
+                3 => Arg3,
+                4 => Arg4,
+                5 => Arg5,
+                6 => Arg6,
+                7 => Arg7,
+                8 => Arg8,
+                9 => Arg9,
+                _ => new IndexOutOfRangeException()
+            };
+            set
+            {
+                switch (index)
+                {
+                   case 0:
+                        Arg0 = (T0)(object?)value!;
+                        break;
+                   case 1:
+                        Arg1 = (T1)(object?)value!;
+                        break;
+                   case 2:
+                        Arg2 = (T2)(object?)value!;
+                        break;
+                   case 3:
+                        Arg3 = (T3)(object?)value!;
+                        break;
+                   case 4:
+                        Arg4 = (T4)(object?)value!;
+                        break;
+                   case 5:
+                        Arg5 = (T5)(object?)value!;
+                        break;
+                   case 6:
+                        Arg6 = (T6)(object?)value!;
+                        break;
+                   case 7:
+                        Arg7 = (T7)(object?)value!;
+                        break;
+                   case 8:
+                        Arg8 = (T8)(object?)value!;
+                        break;
+                   case 9:
+                        Arg9 = (T9)(object?)value!;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public override HttpContext HttpContext { get; }
+
+        public override IList<object?> Arguments => this;
+
+        public T0 Arg0 { get; set; }
+        public T1 Arg1 { get; set; }
+        public T2 Arg2 { get; set; }
+        public T3 Arg3 { get; set; }
+        public T4 Arg4 { get; set; }
+        public T5 Arg5 { get; set; }
+        public T6 Arg6 { get; set; }
+        public T7 Arg7 { get; set; }
+        public T8 Arg8 { get; set; }
+        public T9 Arg9 { get; set; }
+
+        public int Count => 10;
+
+        public bool IsReadOnly => false;
+
+        public bool IsFixedSize => true;
+
+        public void Add(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Clear()
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Contains(object? item)
+        {
+            return IndexOf(item) >= 0;
+        }
+
+        public void CopyTo(object?[] array, int arrayIndex)
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                array[arrayIndex++] = Arguments[i];
+            }
+        }
+
+        public IEnumerator<object?> GetEnumerator()
+        {
+            for (int i = 0; i < Arguments.Count; i++)
+            {
+                yield return Arguments[i];
+            }
+        }
+
+        public override T GetArgument<T>(int index)
+        {
+            return index switch
+            {
+               0 => (T)(object)Arg0!,
+               1 => (T)(object)Arg1!,
+               2 => (T)(object)Arg2!,
+               3 => (T)(object)Arg3!,
+               4 => (T)(object)Arg4!,
+               5 => (T)(object)Arg5!,
+               6 => (T)(object)Arg6!,
+               7 => (T)(object)Arg7!,
+               8 => (T)(object)Arg8!,
+               9 => (T)(object)Arg9!,
+               _ => throw new IndexOutOfRangeException()
+            };
+        }
+
+        public int IndexOf(object? item)
+        {
+            return Arguments.IndexOf(item);
+        }
+
+        public void Insert(int index, object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public bool Remove(object? item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
