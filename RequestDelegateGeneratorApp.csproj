@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>GeneratedOutput</CompilerGeneratedFilesOutputPath>
+  </PropertyGroup>
+
+  <Target Name="RemovePreviousGeneratorOutput" BeforeTargets="CoreCompile">
+    <RemoveDir Directories="$(CompilerGeneratedFilesOutputPath)" />
+  </Target>
+
+  <Target Name="RemoveDirectories" AfterTargets="Build">
+    <RemoveDir Directories="$(CompilerGeneratedFilesOutputPath)/Microsoft.Interop.JavaScript.JSImportGenerator" />
+    <RemoveDir Directories="$(CompilerGeneratedFilesOutputPath)/Microsoft.Interop.LibraryImportGenerator" />
+  </Target>
+
+</Project>
